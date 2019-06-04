@@ -1,17 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
-
-
 void Find(int **a, int r, int c, int n, int column, int row);   // search function //
 
 
 void main()
 {
 	char ans;
-	int i, j, **pin_arithmwn, numb, rows, columns;
+	int i, j, **pin_number, numb, rows, columns;
 	
 	do
 	{
@@ -33,10 +29,10 @@ void main()
 				printf("Wrong column!!\n");
 		}while (columns<1);  // check for negative columns //
 
-		pin_arithmwn = (int **) malloc (rows * sizeof(int));  // create rows in memory //
+		pin_number = (int **) malloc (rows * sizeof(int));  // create rows in memory //
 
 		for (i=0;i<rows;i++)
-			pin_arithmwn[i] = (int *) malloc (columns * sizeof(int));  // create columns in memory //
+			pin_number[i] = (int *) malloc (columns * sizeof(int));  // create columns in memory //
 	
 		for (i=0;i<rows;i++)
 		{
@@ -44,7 +40,7 @@ void main()
 			{
 				printf("Give the %d %d number:", i, j);
 				fflush(stdin);
-				scanf("%d", &pin_arithmwn[i][j]);   // put numbers in array //
+				scanf("%d", &pin_number[i][j]);   // put numbers in array //
 			}
 		}
 
@@ -52,7 +48,7 @@ void main()
 		fflush(stdin);
 		scanf("%d", &numb);  // put the number which we want to search //
 	
-		Find(pin_arithmwn, i=0, j=0, numb, columns, rows); // search function //
+		Find(pin_number, i=0, j=0, numb, columns, rows); // search function //
 
 		printf("\nPress any key to repeat or 'e' for exit: "); 
 		fflush(stdin);
